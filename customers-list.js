@@ -6,6 +6,7 @@ const contactTitle  = editModal.querySelector('.modal-contact-title')
 const contactName = editModal.querySelector('.modal-contact-name')
 const editButton = editModal.querySelector('.modal-edit')
 
+
 editModal.querySelector('div')
 .addEventListener('click', (event)=>{
   event.stopPropagation()
@@ -44,13 +45,15 @@ const filltable = async () => {
     </tr>
 
 `   
-// <td>${element.address.region}</td>
+
         document.querySelectorAll('.remove')
         .forEach(remove =>{
+        
             remove.addEventListener('click', async (event) => {
+              event.stopPropagation()
                 await network.delete(`./customers`, event.target.getAttribute('key'))
                 table.innerHTML = ''
-                filltable()
+                await filltable()
             })
         })
 
