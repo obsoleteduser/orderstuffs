@@ -15,6 +15,12 @@ const getData = async ()=>{
         return acc + +curr.unitsInStock
     }, [0])
 
+
+    stuffs.filter(item => {
+        return item.name.starts
+    })
+
+
     console.log('Avarage stock: ', avaragestock/stuffs.length)
 
     console.log("Most expensive", mostExpensive)

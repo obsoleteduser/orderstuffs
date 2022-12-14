@@ -1,7 +1,6 @@
 
 const instance = axios.create({
     baseURL: 'https://northwind.vercel.app/api',
-    timeout: 1000,
     headers: {'X-Custom-Header': 'foobar'}
   });
 
@@ -20,6 +19,10 @@ const instance = axios.create({
     
     delete: async (URL, id)=>{
         await instance.delete(`${URL}/${id}`, id)
+    },
+
+    put: async (URL, id, data)=>{
+      await instance.put(`${URL}/${id}`, data)
     }
 
   }
