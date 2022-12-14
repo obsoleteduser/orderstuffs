@@ -54,7 +54,7 @@ const filltable = async () => {
               event.stopImmediatePropagation()
                 await network.delete(`./customers`, event.target.getAttribute('key'))
                 table.innerHTML = ''
-                await filltable()
+                filltable()
             })
         })
 
@@ -74,12 +74,10 @@ const filltable = async () => {
         editButton.addEventListener('click', async (event)=>{
           let editedData = {companyName: companyName.value, contactName:  contactName.value, contactTitle: contactTitle.value}
           let id = td.parentNode.getAttribute('key')
-          console.log(id)
           editModal.style.display= 'none'
-         await network.put(`/customers`, id, editedData)
-         
+         await network.put(`/customers`, id, editedData) 
          table.innerHTML = ''
-         await filltable()
+         filltable()
          
         })
       })

@@ -5,7 +5,6 @@ const table =  document.querySelector('.table-category')
 const filltable = async () =>{
    const data = await network.get('./suppliers')
     
-   console.log(data)
 
    data.data.forEach(element => {
 
