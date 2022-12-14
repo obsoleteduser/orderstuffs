@@ -51,6 +51,7 @@ const filltable = async () => {
         
             remove.addEventListener('click', async (event) => {
               event.stopPropagation()
+              event.stopImmediatePropagation()
                 await network.delete(`./customers`, event.target.getAttribute('key'))
                 table.innerHTML = ''
                 await filltable()
